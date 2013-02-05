@@ -1,0 +1,39 @@
+{% extends "books_app/index.html" %}
+
+{% block content %}
+    <div>
+                 
+        {% if items_tbr %}
+        <h2>To-Be-Read list</h2>
+        {% endif %}
+
+        
+        <ul style="padding-left: 0px;">
+        {% for item in items_tbr %}
+                <p>
+                {{ item.author }}{% if item.title %}: {{ item.title }} {% endif %}{% if item.second_title %}({{ item.second_title }}){% endif %} <br>   
+                </p>        
+        {% endfor %}
+        </ul>
+        
+    </div>
+    <div>
+                 
+        {% if items_read %}
+        <h2>Read list</h2>
+        {% endif %}
+
+        
+        <ul style="padding-left: 0px;">
+        {% for item in items_read %}
+                <p>
+                {{ item.author }}{% if item.title %}: {{ item.title }} {% endif %}{% if item.second_title %}({{ item.second_title }}){% endif %} <br>   
+                </p>        
+        {% endfor %}
+        </ul>
+        
+    </div>
+
+
+{% endblock %}
+

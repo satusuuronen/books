@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head> 
+    <title>{% block title %}Books{% endblock %}</title> 
+    <link rel="stylesheet" type="text/css" media="all" href="media/css/960.css">
+    <link rel="stylesheet" type="text/css" media="all" href="media/css/books.css">
+</head>
+<body>
+    <div class="container_16">
+    <div class="grid_3"> 
+    <div id="sidebar">       
+    </div>
+    </div> 
+    <div class="grid_12">
+    <div id="container">
+        <div id="menu">
+                <!--<div class=dividertop> </div> 
+                <h1>Books</h1>
+                <div class=dividerbottom> </div> -->
+                <img src="media/img/books_title.png">
+        </div>
+
+        <div id="content">
+            <div>{% block content %}{% endblock %}</div>
+        </div>
+        <div id="footer">
+            <p>Copyright © 2013 Satu Suuronen</p>
+        </div>
+    </div>
+    </div>
+    </div>
+
+</body>
+</html>

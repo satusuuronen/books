@@ -1,0 +1,78 @@
+ul {
+    padding: 0px;
+}
+
+.current {
+    padding: 0px;
+}
+
+#sidebar {
+    padding-top: 30px;
+    padding-left: 0px;
+    padding-right: 40px;
+    font-family: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+    font-weight: normal;
+
+}
+
+#menu {
+    padding-top: 60px; 
+    padding-bottom: 50px; 
+    padding-left:150px;
+}
+
+h1 {
+    font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;    
+    font-size: 50px;
+    font-weight: normal;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    color: black;
+    text-align: center;
+
+}
+
+h2 {
+   padding-top: 20px;
+   padding-bottom: 10px;
+   font-family: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;    
+   font-weight: normal;
+}
+body {
+    font-family: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+}
+
+a {
+	text-decoration: none;
+    font-family: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+
+}
+
+#container {
+    height: 800px;
+    border:1px solid #DBD4D4;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+#content {
+    height: 590px;
+}
+
+.dividertop {
+    border-bottom: solid 1px;
+    padding-top: 30px;
+    color: #DBD4D4;
+}
+
+.dividerbottom {
+    border-bottom: solid 1px;
+    padding-top: 5px;
+}
+
+#footer {
+    padding-bottom: 5px;
+    text-align: center;
+    font-size: 12px;
+}
+
