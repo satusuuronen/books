@@ -59,6 +59,25 @@ a {
     height: 590px;
 }
 
+.list_title {
+    display: inline;
+    padding-right: 30px;
+}
+
+.list_title:hover {
+    color: #DBD4D4; 
+}
+
+
+.selected_list {
+    font-weight: bold;
+}
+
+.selected_list:hover {
+    color: black;
+}
+
+
 .dividertop {
     border-bottom: solid 1px;
     padding-top: 30px;

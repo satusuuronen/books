@@ -1,13 +1,13 @@
 {% extends "books_app/index.html" %}
 
 {% block content %}
-    <div>
-                 
-        {% if items_tbr %}
-        <h2>To-Be-Read list</h2>
-        {% endif %}
-
-        
+    <div id="title_menu">
+    <div id="list1" class="list_title selected_list" onclick="changeList(this)">To-Be-Read list</div>
+    <div id="list2" class="list_title" onclick="changeList(this)">Read list</div>
+    <div id="list3" class="list_title" onclick="changeList(this)">Reading at the Moment</div>
+    </div> 
+    <div id="list_container">
+    <div id="listing1" class="list">
         <ul style="padding-left: 0px;">
         {% for item in items_tbr %}
                 <div>
@@ -18,18 +18,13 @@
                 {{ item.date_created }}  {{ item.book_type }} <br> 
                 {{ item.description }}
                 </p>
-                <div>        
+                </div>        
         {% endfor %}
         </ul>
         
     </div>
-    <div>
+    <div id="listing2" class="list">
                  
-        {% if items_read %}
-        <h2>Read list</h2>
-        {% endif %}
-
-        
         <ul style="padding-left: 0px;">
         {% for item in items_read %}
                 <div>
@@ -46,12 +41,7 @@
         </ul>
         
     </div>
-    <div>
-                 
-        {% if items_read %}
-        <h2>Reading at the Moment</h2>
-        {% endif %}
-
+    <div id="listing3" class="list">
         
         <ul style="padding-left: 0px;">
         {% for item in items_ratm %}
@@ -68,6 +58,10 @@
         </ul>
         
     </div>
+    </div>
+    <script type="text/javascript">
+	    showDefaultList();
+	</script>
 
     
 {% endblock %}
