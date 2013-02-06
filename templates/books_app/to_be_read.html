@@ -10,9 +10,15 @@
         
         <ul style="padding-left: 0px;">
         {% for item in items_tbr %}
+                <div>
                 <p>
-                {{ item.author }}{% if item.title %}: {{ item.title }} {% endif %}{% if item.second_title %}({{ item.second_title }}){% endif %} <br>   
-                </p>        
+                {{ item.author }}{% if item.title %}: {{ item.title }} {% endif %}{% if item.second_title %}({{ item.second_title }}){% endif %} <input type="button" onclick="showInformation(this)"></input> <br>   
+                </p>
+                <p class="information" style="display: none;">
+                {{ item.date_created }}  {{ item.book_type }} <br> 
+                {{ item.description }}
+                </p>
+                <div>        
         {% endfor %}
         </ul>
         
@@ -26,14 +32,43 @@
         
         <ul style="padding-left: 0px;">
         {% for item in items_read %}
+                <div>
                 <p>
-                {{ item.author }}{% if item.title %}: {{ item.title }} {% endif %}{% if item.second_title %}({{ item.second_title }}){% endif %} <br>   
-                </p>        
+                {{ item.author }}{% if item.title %}: {{ item.title }} {% endif %}{% if item.second_title %}({{ item.second_title }}){% endif %}  <input type="button" onclick="showInformation(this)"></input><br>   
+                </p> 
+                <p class="information" style="display: none;">
+                {{ item.date_created }}  {{ item.book_type }} <br>
+                Read: {{ item.date_read}}
+                {{ item.description }}
+                </p>
+                </div>
+        {% endfor %}
+        </ul>
+        
+    </div>
+    <div>
+                 
+        {% if items_read %}
+        <h2>Reading at the Moment</h2>
+        {% endif %}
+
+        
+        <ul style="padding-left: 0px;">
+        {% for item in items_ratm %}
+                <div>         
+                <p>
+                {{ item.author }}{% if item.title %}: {{ item.title }} {% endif %}{% if item.second_title %}({{ item.second_title }}){% endif %}  <input type="button" onclick="showInformation(this)"></input><br>   
+                </p>
+                <p class="information" style="display: none;">
+                {{ item.date_created }}  {{ item.book_type }} <br>
+                {{ item.description }}
+                </p>
+                </div>        
         {% endfor %}
         </ul>
         
     </div>
 
-
+    
 {% endblock %}
 
