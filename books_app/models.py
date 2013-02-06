@@ -6,14 +6,16 @@ class Item(models.Model):
     author = models.CharField(max_length=200)
     title = models.CharField(max_length=200, blank=True)
     second_title = models.CharField(max_length=200, blank=True)
-    date_created = models.DateTimeField(auto_now_add=True)
+    date_created = models.DateField(auto_now_add=True)
     date_read = models.DateField('date read', blank=True, null=True) 
     description = models.TextField(blank=True)
     TO_BE_READ = 'TBR'
     READ = 'READ'    
+    READING = 'RATM'
     STATUS_CHOICES = (
         (TO_BE_READ, 'To-Be-Read'),
         (READ, 'Read'),
+        (READING, 'Reading at the Moment'),
     )
     status = models.CharField(max_length=4,choices= STATUS_CHOICES, default=TO_BE_READ)
     FICTION = 'FICTION'
