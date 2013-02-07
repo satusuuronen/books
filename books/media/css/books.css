@@ -18,7 +18,7 @@ ul {
 #menu {
     padding-top: 60px; 
     padding-bottom: 50px; 
-    padding-left:150px;
+    padding-left:200px;
 }
 
 h1 {
@@ -48,35 +48,100 @@ a {
 
 }
 
+.list_button {
+    font-size: 20px;
+    color: #DBD4D4;
+    float: right;
+}
+
+.list_button:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.title_information {
+    display: inline;
+    text-align: left;
+}
+
 #container {
-    height: 800px;
+    min-height: 800px;
     border:1px solid #DBD4D4;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: 40px;
+    padding-right: 40px;
+    position: relative;
 }
 
 #content {
-    height: 590px;
 }
 
-.list_title {
+#list_container {   
+    border-left:1px solid #9C9195;
+    border-right:1px solid #9C9195;
+    border-bottom:1px solid #9C9195;
+    border-top:1px solid #9C9195;
+    min-height: 470px;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-bottom: 30px;
+    padding-top:30px;
+    margin-top: 0px;
+    position: relative;
+    top: -2px;
+    z-index: 10;
+}
+
+.information {
+    font-color: #9C9195;
+    font-size: 12px;
     display: inline;
-    padding-right: 30px;
+    text-align: left;
+}
+
+.date {
+    float: right;
+}
+
+.list_title {  
+    display: inline-block;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top:1px solid #DBD4D4;
+    border-top-left-radius: 5px 5px;
+    border-top-right-radius: 5px 5px;
+    border-left:1px solid #DBD4D4;
+    border-right:1px solid #DBD4D4;
+    text-align: center;
+    z-index: 5;
+ 
 }
 
 .list_title:hover {
-    color: #DBD4D4; 
+    color: #DBD4D4;
+    cursor: pointer; 
 }
 
 
 .selected_list {
     font-weight: bold;
+    border-color: #9C9195;
+    background-color: white;
+    z-index: 25;
 }
 
 .selected_list:hover {
     color: black;
+    border-color: #9C9195;
 }
 
+.divider { 
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border-top: solid 1px;
+    color: #DBD4D4; 
+}
 
 .dividertop {
     border-bottom: solid 1px;
@@ -93,5 +158,10 @@ a {
     padding-bottom: 5px;
     text-align: center;
     font-size: 12px;
+}
+
+#title_menu {
+    position: relative;
+    z-index: 15;
 }
 

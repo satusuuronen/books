@@ -1,10 +1,14 @@
-function showInformation(button) {
-    var information = $(button).parent().parent().find('.information');
+function showInformation(list_button) {
+    var information = $(list_button).parent().parent().find('.information');
     if (!($(information).is(":visible"))) {
         information.show();
+        $(list_button).html("-");
+        $(list_button).show();
     }
     else {
         information.hide();
+        $(list_button).html("+");
+        $(list_button).show();
     }    
 }
 

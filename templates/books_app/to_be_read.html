@@ -2,23 +2,26 @@
 
 {% block content %}
     <div id="title_menu">
-    <div id="list1" class="list_title selected_list" onclick="changeList(this)">To-Be-Read list</div>
-    <div id="list2" class="list_title" onclick="changeList(this)">Read list</div>
-    <div id="list3" class="list_title" onclick="changeList(this)">Reading at the Moment</div>
+        <div id="list1" class="list_title selected_list" onclick="changeList(this)">Reading at the Moment</div>
+        <div id="list2" class="list_title" onclick="changeList(this)">To-Be-Read list</div>
+        <div id="list3" class="list_title" onclick="changeList(this)">Read list</div>
     </div> 
+    
     <div id="list_container">
     <div id="listing1" class="list">
         <ul style="padding-left: 0px;">
-        {% for item in items_tbr %}
+        {% for item in items_ratm %}
                 <div>
-                <p>
-                {{ item.author }}{% if item.title %}: {{ item.title }} {% endif %}{% if item.second_title %}({{ item.second_title }}){% endif %} <input type="button" onclick="showInformation(this)"></input> <br>   
+                <p class="title_information">
+                {{ item.author }}{% if item.title %}: {{ item.title }} {% endif %}{% if item.second_title %}({{ item.second_title }}){% endif %} <span class="list_button" onclick="showInformation(this)"> + </span> <br>   
                 </p>
                 <p class="information" style="display: none;">
-                {{ item.date_created }}  {{ item.book_type }} <br> 
-                {{ item.description }}
+                <br>{{ item.book_type }}   <span class="date"> {{ item.date_created }} </span> <br><br> 
+                {{ item.description }} <br><br>
                 </p>
-                </div>        
+                <div class="divider"></div> 
+                </div>
+                       
         {% endfor %}
         </ul>
         
@@ -26,16 +29,16 @@
     <div id="listing2" class="list">
                  
         <ul style="padding-left: 0px;">
-        {% for item in items_read %}
+        {% for item in items_tbr %}
                 <div>
-                <p>
-                {{ item.author }}{% if item.title %}: {{ item.title }} {% endif %}{% if item.second_title %}({{ item.second_title }}){% endif %}  <input type="button" onclick="showInformation(this)"></input><br>   
+                <p class="title_information">
+                {{ item.author }}{% if item.title %}: {{ item.title }} {% endif %}{% if item.second_title %}({{ item.second_title }}){% endif %}  <span class="list_button" onclick="showInformation(this)"> + </span> <br>   
                 </p> 
                 <p class="information" style="display: none;">
-                {{ item.date_created }}  {{ item.book_type }} <br>
-                Read: {{ item.date_read}}
-                {{ item.description }}
+                <br>{{ item.book_type }} <span class="date"> {{ item.date_created }} </span> <br><br>
+                {{ item.description }}<br><br>
                 </p>
+                <div class="divider"></div>
                 </div>
         {% endfor %}
         </ul>
@@ -44,15 +47,16 @@
     <div id="listing3" class="list">
         
         <ul style="padding-left: 0px;">
-        {% for item in items_ratm %}
+        {% for item in items_read %}
                 <div>         
-                <p>
-                {{ item.author }}{% if item.title %}: {{ item.title }} {% endif %}{% if item.second_title %}({{ item.second_title }}){% endif %}  <input type="button" onclick="showInformation(this)"></input><br>   
+                <p class="title_information">
+                {{ item.author }}{% if item.title %}: {{ item.title }} {% endif %}{% if item.second_title %}({{ item.second_title }}){% endif %}  <span class="list_button" onclick="showInformation(this)"> + </span> <br>   
                 </p>
                 <p class="information" style="display: none;">
-                {{ item.date_created }}  {{ item.book_type }} <br>
-                {{ item.description }}
+                <br>{{ item.book_type }}  | Read: {{ item.date_read}} <span class="date"> {{ item.date_created }} </span> <br><br>
+                {{ item.description }}<br><br>
                 </p>
+                <div class="divider"></div>
                 </div>        
         {% endfor %}
         </ul>
