@@ -160,6 +160,45 @@ a {
     font-size: 12px;
 }
 
+.sort_option:hover {
+    color: black;
+}
+
+.sort_options {
+    height: 12px;
+    font-size:12px;
+    overflow: hidden;
+    width: 100px;
+    display: inline-block;
+    position: absolute;
+    top: 30px;
+    left: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.sort_options:hover  {
+    color: #9C9195;
+    overflow: visible;
+    height: inherit;
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.sorted_by {
+
+}
+
+.sorter {
+    color: #DBD4D4;
+    display: inline;
+    text-align: left;
+    font-size: 12px;
+}
+
 #title_menu {
     position: relative;
     z-index: 15;

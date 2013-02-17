@@ -28,8 +28,10 @@ function changeList(listSelector) {
         case 'list3':
             showList('listing3');
             break;
+        case 'list4':
+            showList('listing4');
+            break;
     }
-                
 } 
 
 function showList(list) {
@@ -38,5 +40,49 @@ function showList(list) {
 }
 
 function showDefaultList() {
-    showList('listing1');
+    var list = getUrlParameter('list');
+    if (list === undefined) {
+        showList('listing1');
+    }
+    else {
+        showList('listing' + list);
+    $("#title_menu").find('.list_title').removeClass('selected_list');
+    $("#list" + list).addClass('selected_list');
+    }
+}
+
+function sortList(sortBy) {
+    var sorter = $(sortBy).attr("value");
+    var url = document.location.toString().split("?")[0];
+    url += "?sort=" + sorter;
+    var selectedList = $("#title_menu").find('.selected_list').attr('id');
+    selectedList = selectedList[selectedList.length - 1];
+    url += "&list=" + selectedList;
+    document.location = url;
+}
+
+function setupComponents() {
+    var sorter = getUrlParameter("sort");
+    if (sorter === undefined) {
+        sorter = $("#list_container").find('.sorted_by').attr("value");
+    }
+    var selectedOption = $("#list_container").find('.sort_option[value='+ sorter +']')
+    selectedOption.hide();
+    $("#list_container").find('.sorted_by').html(selectedOption.html());
+    $("#list_container").find('.sorted_by').attr("value", sorter);
+            
+}
+
+function getUrlParameter(name) {
+    var urlParameters = document.location.toString().split("?")[1];
+    if (urlParameters === undefined) {
+        return
+    }
+    urlParameters = urlParameters.split("&");
+    for (index in urlParameters) {
+        var parameter = urlParameters[index].split("=");
+        if (parameter[0] === name) {
+            return parameter[1];
+        }
+    }
 }

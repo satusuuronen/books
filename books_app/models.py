@@ -12,10 +12,12 @@ class Item(models.Model):
     TO_BE_READ = 'TBR'
     READ = 'READ'    
     READING = 'RATM'
+    LIBRARY = 'LIB'
     STATUS_CHOICES = (
         (TO_BE_READ, 'To-Be-Read'),
         (READ, 'Read'),
         (READING, 'Reading at the Moment'),
+        (LIBRARY, 'Library'),
     )
     status = models.CharField(max_length=4,choices= STATUS_CHOICES, default=TO_BE_READ)
     FICTION = 'FICTION'
@@ -27,6 +29,13 @@ class Item(models.Model):
         (CODING, 'Coding'),
     )
     book_type = models.CharField(max_length=7, choices=BOOK_TYPE_CHOICES, blank=True)
+    YES = 'YES'
+    NO = 'NO'
+    IN_MY_LIBRARY_CHOICES = (
+        (YES, 'Yes'),
+        (NO, 'No'),
+    )
+    in_my_library = models.CharField('on my bookshelf', max_length=3, choices=IN_MY_LIBRARY_CHOICES)
 
     def __unicode__(self):
         return self.author
