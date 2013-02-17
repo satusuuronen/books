@@ -20,13 +20,15 @@
                 <div class="sort_option" value="book_type" onclick="sortList(this)">Book type</div>
                 <div class="sort_option" value="date_read" onclick="sortList(this)">Read date</div>
             </div>
+            <span class="show" onclick="showAll()"> All + </span> <span class=idle> / </span>
+            <span class="hide" onclick="hideAll()"> All - </span>
         </div>
         {% endif %} 
         <ul style="padding-left: 0px;">
         {% for item in items_ratm %}
                 <div>
                 <p class="title_information">
-                {{ item.author }}{% if item.title %}: {{ item.title }} {% endif %}{% if item.second_title %}({{ item.second_title }}){% endif %} <span class="list_button" onclick="showInformation(this)"> + </span> <br>   
+                {{ item.author }}{% if item.title %}: {{ item.title }} {% endif %}{% if item.second_title %}({{ item.second_title }}){% endif %} <span class="list_button no_show" onclick="showInformation(this)"> + </span> <br>   
                 </p>
                 <p class="information" style="display: none;">
                 <br>{{ item.book_type }}{% if item.in_my_library == item.YES %} | on my bookshelf{% endif %}   <span class="date"> {{ item.date_created }} </span> <br><br> 
@@ -51,13 +53,15 @@
                 <div class="sort_option" value="book_type" onclick="sortList(this)">Book type</div>
                 <div class="sort_option" value="date_read" onclick="sortList(this)">Read date</div>
             </div>
+            <span class="show" onclick="showAll()"> All + </span> <span class=idle> / </span>
+            <span class="hide" onclick="hideAll()"> All - </span>
         </div>
         {% endif %}          
         <ul style="padding-left: 0px;">
         {% for item in items_tbr %}
                 <div>
                 <p class="title_information">
-                {{ item.author }}{% if item.title %}: {{ item.title }} {% endif %}{% if item.second_title %}({{ item.second_title }}){% endif %}  <span class="list_button" onclick="showInformation(this)"> + </span> <br>   
+                {{ item.author }}{% if item.title %}: {{ item.title }} {% endif %}{% if item.second_title %}({{ item.second_title }}){% endif %}  <span class="list_button no_show" onclick="showInformation(this)"> + </span> <br>   
                 </p> 
                 <p class="information" style="display: none;">
                 <br>{{ item.book_type }}{% if item.in_my_library == item.YES %} | on my bookshelf{% endif %} <span class="date"> {{ item.date_created }} </span> <br><br>
@@ -81,13 +85,15 @@
                 <div class="sort_option" value="book_type" onclick="sortList(this)">Book type</div>
                 <div class="sort_option" value="date_read" onclick="sortList(this)">Read date</div>
             </div>
+            <span class="show" onclick="showAll()"> All + </span> <span class=idle> / </span>
+            <span class="hide" onclick="hideAll()"> All - </span>
         </div>
         {% endif %}         
         <ul style="padding-left: 0px;">
         {% for item in items_read %}
                 <div>         
                 <p class="title_information">
-                {{ item.author }}{% if item.title %}: {{ item.title }} {% endif %}{% if item.second_title %}({{ item.second_title }}){% endif %}  <span class="list_button" onclick="showInformation(this)"> + </span> <br>   
+                {{ item.author }}{% if item.title %}: {{ item.title }} {% endif %}{% if item.second_title %}({{ item.second_title }}){% endif %}  <span class="list_button no_show" onclick="showInformation(this)"> + </span> <br>   
                 </p>
                 <p class="information" style="display: none;">
                 <br>{{ item.book_type }}  | Read: {{ item.date_read}}{% if item.in_my_library == item.YES %} | on my bookshelf{% endif %} <span class="date"> {{ item.date_created }} </span> <br><br>
@@ -111,13 +117,15 @@
                 <div class="sort_option" value="book_type" onclick="sortList(this)">Book type</div>
                 <div class="sort_option" value="date_read" onclick="sortList(this)">Read date</div>
             </div>
+            <span class="show" onclick="showAll()"> All + </span> <span class=idle> / </span>
+            <span class="hide" onclick="hideAll()"> All - </span>
         </div>
         {% endif %}                
         <ul style="padding-left: 0px;">
         {% for item in items_lib %}
                 <div>
                 <p class="title_information">
-                {{ item.author }}{% if item.title %}: {{ item.title }} {% endif %}{% if item.second_title %}({{ item.second_title }}){% endif %}  <span class="list_button" onclick="showInformation(this)"> + </span> <br>   
+                {{ item.author }}{% if item.title %}: {{ item.title }} {% endif %}{% if item.second_title %}({{ item.second_title }}){% endif %}  <span class="list_button no_show" onclick="showInformation(this)"> + </span> <br>   
                 </p> 
                 <p class="information" style="display: none;">
                 <br>{{ item.book_type }}{% if item.date_read%} | Read:  {{ item.date_read}}{% endif %} | on my bookshelf <span class="date"> {{ item.date_created }} </span> <br><br>

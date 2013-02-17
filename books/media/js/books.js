@@ -4,13 +4,26 @@ function showInformation(list_button) {
         information.show();
         $(list_button).html("-");
         $(list_button).show();
+        $(list_button).removeClass('no_show');
+        $(list_button).addClass('shown');
     }
     else {
         information.hide();
         $(list_button).html("+");
         $(list_button).show();
+        $(list_button).removeClass('shown');
+        $(list_button).addClass('no_show');
     }    
 }
+
+function showAll() {
+    $("#list_container").find('.list_button.no_show').click();
+}
+
+function hideAll(){
+    $("#list_container").find('.list_button.shown').click();
+}
+
 
 function changeList(listSelector) {
     if ($(listSelector).hasClass('selected_list')) {
@@ -32,6 +45,7 @@ function changeList(listSelector) {
             showList('listing4');
             break;
     }
+    hideAll();
 } 
 
 function showList(list) {
